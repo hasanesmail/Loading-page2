@@ -9,10 +9,10 @@ body {
 }
 .container .box {
     position: absolute;
-    width: 9rem;
-    height: 9rem;
-    top: 48%;
-    left: 48%;
+    width: 11rem;
+    height: 11rem;
+    top: 46%;
+    left: 47%;
     margin: -3.1rem 0 0 -3.1rem;
     border-top: solid 3px #32afa9;
     border-radius: 50%;
@@ -20,7 +20,7 @@ body {
 }
 .container .box::before{
     content: "";
-    position: absolute;
+    position: absolute; 
     left: 5px;
     top: 5px;
     right: 5px;
@@ -51,10 +51,37 @@ body {
 p {
     position: absolute;
     top: 390px;
-    left: 720px;
+    left: 710px;
     color: #09f7f7;
     margin-top: 20px;
     letter-spacing: 2px;
     font-weight: bold;
     text-shadow: 0 0 5px #09f7f7;       
-        }
+}
+
+@media (min-width: 330px) {
+    .box {
+        width: 50%;
+        height: 50%;
+        border-top-width: 4px; /* زيادة سمك الخط قليلاً */
+    }
+    p {
+        font-size: 18px;
+        letter-spacing: 4px;
+        left: 43%;
+        top: 47%;
+    }
+}
+@media (min-width: 810px) {
+    .box {
+        width: 50%;
+        height: 50%;
+        border-top-width: 4px; /* زيادة سمك الخط قليلاً */
+    }
+    p {
+        font-size: 18px;
+        letter-spacing: 4px;
+        left: 45%;
+        top: 47%;
+    }
+}
