@@ -1,87 +1,83 @@
 body {
-    margin: 0;
-    padding: 0;
-}
-.container {
-    width: 100vw;
-    height: 100vh;
-    background: #000;
-}
-.container .box {
-    position: absolute;
-    width: 11rem;
-    height: 11rem;
-    top: 46%;
-    left: 47%;
-    margin: -3.1rem 0 0 -3.1rem;
-    border-top: solid 3px #32afa9;
-    border-radius: 50%;
-    animation: rotate 2s infinite linear ;
-}
-.container .box::before{
-    content: "";
-    position: absolute; 
-    left: 5px;
-    top: 5px;
-    right: 5px;
-    bottom: 5px;
-    border-top: solid 3px #f17362;
-    border-radius: 50%;
-    animation: rotate 3s infinite linear ;
-}
-.container .box::after{
-    content: "";
-    position: absolute;
-    left: 12px;
-    top: 12px;
-    right: 12px;
-    bottom: 12px;
-    border-top: solid 3px #7e0cf5;
-    border-radius: 50%;
-    animation: rotate 1.5s infinite linear ;
-}
-@keyframes rotate {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-p {
-    position: absolute;
-    top: 390px;
-    left: 710px;
-    color: #09f7f7;
-    margin-top: 20px;
-    letter-spacing: 2px;
-    font-weight: bold;
-    text-shadow: 0 0 5px #09f7f7;       
-}
+            background-color: #2c3e50; /* خلفية داكنة لتبرز الألوان */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
 
-@media (min-width: 330px) {
-    .box {
-        width: 50%;
-        height: 50%;
-        border-top-width: 4px; /* زيادة سمك الخط قليلاً */
-    }
-    p {
-        font-size: 18px;
-        letter-spacing: 4px;
-        left: 43%;
-        top: 47%;
-    }
-}
-@media (min-width: 810px) {
-    .box {
-        width: 50%;
-        height: 50%;
-        border-top-width: 4px; /* زيادة سمك الخط قليلاً */
-    }
-    p {
-        font-size: 18px;
-        letter-spacing: 4px;
-        left: 45%;
-        top: 47%;
-    }
-}
+        .loader {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            perspective: 800px; /* تعطي تأثير البعد الثالث */
+        }
+
+        .inner {
+            position: absolute;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;  
+        }
+
+        /* الحلقة الأولى - برتقالية */
+        .inner.one {
+            left: 0%;
+            top: 0%;
+            animation: rotate-one 1s linear infinite;
+            border-bottom: 4px solid #f74809;
+        }
+
+        /* الحلقة الثانية - خضراء */
+        .inner.two {
+            right: 0%;
+            top: 0%;
+            animation: rotate-two 1s linear infinite;
+            border-right: 4px solid #48f709;
+        }
+
+        /* الحلقة الثالثة - زرقاء */
+        .inner.three {
+            right: 0%;
+            bottom: 0%;
+            animation: rotate-three 1s linear infinite;
+            border-top: 4px solid #09f7f7;
+        }
+
+        /* نص التحميل */
+        p {
+            position: absolute;
+            top: 390px;
+            left: 725px;
+            color: #09f7f7;
+            margin-top: 20px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-shadow: 0 0 5px #09f7f7;       
+        }
+
+        /* حركات الـ Keyframes */
+        @keyframes rotate-one {
+            0% { transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg); }
+            100% { transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg); }
+        }
+
+        @keyframes rotate-two {
+            0% { transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg); }
+            100% { transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg); }
+        }
+
+        @keyframes rotate-three {
+            0% { transform: rotateX(35deg) rotateY(55deg) rotateZ(0deg); }
+            100% { transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); }
+        }
+
+
+
+
+
+        
